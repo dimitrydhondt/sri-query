@@ -2,7 +2,7 @@
 
 ## Introduction
 
-To allow filtering on list resources, [SRI][sri] describes the server should implement a set of URL parameters, to allow the client to restrict the list of items retrieved. Besides stating that a number of sensible data access paths should be supported, it does not specify anything else. This specification describes a standard filtering method, that tries to standardize basic filtering. It allows the list resource to be restricted on any of the direct keys in the resource, and allows the client to apply a simple operator to any of those keys. These basic filters should take this form :
+To allow filtering on list resources, [SRI][sri] describes the server should implement a set of URL parameters, to allow the client to restrict the list of items retrieved. Besides stating that a number of sensible data access paths should be supported, it does not specify any specifics. This specification describes a standard filtering method, that standardizes basic filtering. It allows the list resource to be restricted on any of the direct keys in the resource, and allows the client to apply operators to it's value. These basic filters should take this form :
 
   [key][operator]=[value]
 
@@ -10,18 +10,18 @@ For example, to restrict the list resource to only include items where publicati
 
   GET /items?issuedBefore=2015-01-01T00:00:00Z
 
-In this example `key` is issued, `operator` is `Before`, and `value` is `2015-01-01`.
+In this example *key* is `issued`, *operator* is `Before`, and *value* is `2015-01-01`.
 
 The basic filters SHOULD BE applicable to any direct key of these types :
 
 * `string`
-* `timestamp` The [value] section should be a timestamp as specified in RFC3339
+* `timestamp` The *value* section should be a timestamp as specified in RFC3339
 * `numeric`
-* `array` The [value] section should contain a comma-separated list of one of the above 3 types
+* `array` The *value* section should contain a comma-separated list of one of the above 3 types
 
 The supported `operator` values are :
 
-* `None` If no operator is specified (i.e. GET /items?publicationDate=2015-01-01T00:00:00+02:00). 
+* If no *operator* is specified (i.e. GET /items?publicationDate=2015-01-01T00:00:00+02:00). 
 ** For `strings` only resources that have a case insensitive match SHOULD BE selected.
 ** For `numeric` and `timestamp` only resources that have this exact value SHOULD BE selected.
 ** For `array` all resources MUST BE selected where the array in the resource is the same as the array that corresponds to `value`.
