@@ -15,9 +15,9 @@ In this example *key* is `issued`, *operator* is `Before`, and *value* is `2015-
 The basic filters SHOULD BE applicable to any direct key of these types :
 
 * `string`
-* `timestamp` The *value* section should be a timestamp as specified in RFC3339
+* `timestamp` The *value* should be a timestamp as specified in [RFC3339][rfc3339]. The *value* may ommit the time portion.
 * `numeric`
-* `array` The *value* section should contain a comma-separated list of one of the above 3 types
+* `array` The *value* should contain a comma-separated list of one of the above 3 types
 
 Operators are case insensitive, by default. The supported *operator* values are :
 
@@ -79,3 +79,4 @@ Searching through this `q` parameter should by definition be a broad search. So 
 Specifying a criterium (key + operator) more than once results in all operations being applied in additive (AND) fashion.
 
 [sri]: https://github.com/dimitrydhondt/sri
+[rfc3339]: https://www.ietf.org/rfc/rfc3339.txt
