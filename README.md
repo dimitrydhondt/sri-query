@@ -2,7 +2,7 @@
 
 ## Introduction
 
-To allow filtering on list resources, [SRI][sri] describes the server should implement a set of URL parameters, to allow the client to restrict the list of items retrieved. Besides stating that a number of sensible data access paths should be supported, it does not specify any specifics. This specification describes a standard filtering method, that standardizes basic filtering. It allows the list resource to be restricted on any of the direct keys in the resource, and allows the client to apply operators to it's value. These basic filters should take this form :
+To allow filtering on list resources, [SRI][sri] describes the server should implement a set of URL parameters, to allow the client to restrict the list of items retrieved. Besides stating that a number of sensible data access paths should be supported, it does not give any specifics. This specification describes a standard filtering method, that standardizes basic filtering. It allows the list resource to be restricted on any of the direct keys in the resource, and allows the client to apply operators to it's value. These basic filters should take this form :
 
     [key][prefix-1][prefix-2][operator]=[value]
 
