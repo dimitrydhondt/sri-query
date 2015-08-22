@@ -10,7 +10,7 @@ For example, to restrict the list resource to only include items where publicati
 
     GET /items?issuedBefore=2015-01-01T00:00:00Z
 
-In this example *key* is `issued`, *operator* is `Before`, and *value* is `2015-01-01`, and `prefix` is omitted.
+In this example *key* is `issued`, *operator* is `Before`, and *value* is `2015-01-01`, and `prefix-1`,`prefix-2` are omitted.
 
 The basic filters SHOULD BE applicable to any direct key of these types :
 
