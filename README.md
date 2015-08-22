@@ -27,11 +27,11 @@ Operators are case insensitive, by default. The supported *operator* values are 
   * For `array` all resources MUST BE selected where the array in the resource is the same as the array that corresponds to `value` (as a comma-separated list).
 
 * `Greater`
-  * For `string`, this does a case insensitive comparison, and selects resources that have a string [key] with sort order greater than [value]
+  * For `string`, this does a case insensitive comparison, and selects resources that have a string *key* with sort order greater than *value*
   * For `timestamp` and `numeric`, it selects items that have *key* > *value*
 
 * `GreaterOrEqual`, `After`
-  * For `string`, this does a case insensitive comparison, and selects resources that have [key] with sort order greater than, or equal to [value].
+  * For `string`, this does a case insensitive comparison, and selects resources that have *key* with sort order greater than, or equal to *value*.
   * For `timestamp` and `numeric`, it selects resources that have *key* >= *value*
 
 * `Less`
@@ -47,7 +47,7 @@ Operators are case insensitive, by default. The supported *operator* values are 
 * `Contains`
   * For `string`, selects resources that contains (case insensive) a substring *value*
   * For `array`, it returns resources where the resource has an array that contains the sub-array (possibly a single value) that is formed by *value* (being a comma-separated list of strings, numerics, or timestamps).
-  * For `DCMI-Period` values, it returns those resources where [value] (an RFC3339 timestamp) is between *start* and *end* (inclusive).
+  * For `DCMI-Period` values, it returns those resources where *value* (an RFC3339 timestamp) is between *start* and *end* (inclusive).
 
 * `RegEx`
   * For `string`, selects resource that match (case insensitive) a POSIX regular expression *value*.
