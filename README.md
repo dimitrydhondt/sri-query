@@ -24,7 +24,7 @@ Operators are case insensitive, by default. The supported *operator* values are 
 * If no *operator* is specified (i.e. GET /items?publicationDate=2015-01-01T00:00:00+02:00). 
   * For `strings` only resources that have a case insensitive match SHOULD BE selected.
   * For `numeric` and `timestamp` only resources that have this exact value SHOULD BE selected.
-  * For `array` all resources MUST BE selected where the array in the resource is the same as the array that corresponds to `value`.
+  * For `array` all resources MUST BE selected where the array in the resource is the same as the array that corresponds to `value` (as a comma-separated list).
 
 * `Greater`
   * For `string`, this does a case insensitive comparison, and selects resources that have a string [key] with sort order greater than [value]
