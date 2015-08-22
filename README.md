@@ -15,7 +15,7 @@ In this example *key* is `issued`, *operator* is `Before`, and *value* is `2015-
 The basic filters SHOULD BE applicable to any direct key of these types :
 
 * `string`
-* `timestamp` The *value* should be a timestamp as specified in [RFC3339][rfc3339]. The *value* may ommit the time portion.
+* `timestamp` The *value* should be a timestamp as specified in [RFC3339][rfc3339]. The *value* may omit the time portion.
 * `numeric`
 * `array` The *value* should contain a comma-separated list of one of the above 3 types
 
