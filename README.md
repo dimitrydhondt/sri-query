@@ -19,9 +19,9 @@ The basic filters SHOULD BE applicable to any direct key of these types :
 * `numeric`
 * `array` The *value* should contain a comma-separated list of one of the above 3 types
 
-Operators are case insensitive, by default. The supported *operator* values are :
+Operators are case insensitive, by default. Servers MUST support these *operators* :
 
-* If no *operator* is specified (i.e. GET /items?publicationDate=2015-01-01T00:00:00+02:00). 
+* If no *operator* is specified (i.e. `GET /items?publicationDate=2015-01-01T00:00:00+02:00`). 
   * For `strings` only resources that have a case insensitive match SHOULD BE selected.
   * For `numeric` and `timestamp` only resources that have this exact value SHOULD BE selected.
   * For `array` all resources MUST BE selected where the array in the resource is the same as the array that corresponds to `value` (as a comma-separated list).
