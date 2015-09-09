@@ -17,7 +17,7 @@ The basic filters SHOULD BE applicable to any direct key of these types :
 * `string`
 * `timestamp` The *value* should be a timestamp as specified in [RFC3339][rfc3339]. The *value* may omit the time portion.
 * `numeric`
-* `boolean` the value is either `true` or `false`.
+* `boolean` the value is either `true`, `false` or `any`.
 * `array` The *value* should contain a comma-separated list of one of the above 3 types
 
 Operators are case insensitive, by default. Servers MUST support these *operators* :
@@ -26,7 +26,7 @@ Operators are case insensitive, by default. Servers MUST support these *operator
   * For `strings` only resources that have a case insensitive match SHOULD BE selected.
   * For `numeric` and `timestamp` only resources that have this exact value SHOULD BE selected.
   * For `array` all resources MUST BE selected where the array in the resource is the same as the array that corresponds to `value` (as a comma-separated list).
-  * For `boolean` only resources that have the specified value SHOULD BE selected.
+  * For `boolean` only resources that have the specified value SHOULD BE selected, unless `any` is specified, in which case no filtering is applied (allows overriding default filters).
 
 * `Greater`
   * For `string`, this does a case insensitive comparison, and selects resources that have a string *key* with sort order greater than *value*
