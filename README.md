@@ -17,6 +17,7 @@ The basic filters SHOULD BE applicable to any direct key of these types :
 * `string`
 * `timestamp` The *value* should be a timestamp as specified in [RFC3339][rfc3339]. The *value* may omit the time portion.
 * `numeric`
+* `boolean` the value is either `true` or `false`.
 * `array` The *value* should contain a comma-separated list of one of the above 3 types
 
 Operators are case insensitive, by default. Servers MUST support these *operators* :
