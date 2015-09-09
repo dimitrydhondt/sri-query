@@ -26,6 +26,7 @@ Operators are case insensitive, by default. Servers MUST support these *operator
   * For `strings` only resources that have a case insensitive match SHOULD BE selected.
   * For `numeric` and `timestamp` only resources that have this exact value SHOULD BE selected.
   * For `array` all resources MUST BE selected where the array in the resource is the same as the array that corresponds to `value` (as a comma-separated list).
+  * For `boolean` only resources that have the specified value SHOULD BE selected.
 
 * `Greater`
   * For `string`, this does a case insensitive comparison, and selects resources that have a string *key* with sort order greater than *value*
