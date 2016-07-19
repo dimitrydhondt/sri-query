@@ -4,7 +4,7 @@
 
 To allow filtering on list resources, [SRI][sri] describes the server should implement a set of URL parameters, to allow the client to restrict the list of items retrieved. Besides stating that a number of sensible data access paths should be supported, it does not give any specifics. This specification describes a standard filtering method, that standardizes basic filtering. It allows the list resource to be restricted on any of the direct keys in the resource, and allows the client to apply operators to it's value. These basic filters take this form :
 
-    [key][prefix-1][prefix-2][operator]=[value]
+    [key][prefix-1][prefix-2][operator][path]=[value]
 
 For example, to restrict the list resource to only include items where publication date is before 1/1/2015 :
 
@@ -58,6 +58,7 @@ Any of the *operators* (including the equality operator that is blank) above can
 
 On top of the operator *prefix* `CaseSensitive`, all operator can have a second *prefix* `Not`, to invert the operator’s logic.
 
+
 Examples : 
 
     GET /items?firstNameCaseSensitiveNotContains=ike
@@ -69,6 +70,12 @@ Examples :
     GET /items?tagsContains=news
     GET /transactions?amountLessEqual=0
     GET /transactions?amountGreater=100000
+
+Besides filtering on a direct key it's also possible to *filter on keys in a json document*. In that case filtering is done on `path`. The path has a '.'-notation and does support the basic filtering but not the filtering on operator and prefixes.
+Some examples
+    GET /items?orderedBy.person.firstName=Mike
+    GET /items?deliveredTo.custom.zipCode=1040,1050,1060
+    
 
 Besides the general filters above it is advised that servers implemented a simple full-text search. They should do this by implementing a parameter `q`. The value of the parameter can have multiple keywords, separated by a plus (+) sign.
 
